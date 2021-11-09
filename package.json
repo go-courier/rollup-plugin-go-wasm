@@ -1,0 +1,34 @@
+{
+  "name": "@go-courier/rollup-plugin-go-wasm",
+  "version": "0.1.0",
+  "license": "WTFPL",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "postinstall": "go install ./go-wasm-pack"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "go-wasm-pack/",
+    "go.mod",
+    "go.sum"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-url": "^6.1.0",
+    "@types/node": "^16.11.7",
+    "prettier": "^2.4.1",
+    "rollup": "^2.59.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.14"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "printWidth": 120
+  }
+}
