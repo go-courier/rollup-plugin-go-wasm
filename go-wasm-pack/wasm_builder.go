@@ -103,6 +103,7 @@ func (b *WASMBuilder) Build(ctx context.Context) {
 
 func (b *WASMBuilder) load() (*packages.Package, map[string]bool, error) {
 	loadedPackages, err := packages.Load(&packages.Config{
+		Env:  append(os.Environ(), "GOOS=js", "GOARCH=wasm"),
 		Mode: packages.NeedName | packages.NeedFiles | packages.NeedImports | packages.NeedModule,
 	}, b.input)
 	if err != nil {

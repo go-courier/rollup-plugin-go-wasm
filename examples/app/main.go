@@ -2,8 +2,10 @@
 
 package main
 
-import "syscall/js"
+import (
+	"github.com/go-courier/rollup-plugin-go-wasm/examples/app/sub"
+)
 
 func main() {
-	js.Global().Get("document").Call("write", "Hello Go Wasm 11")
+	sub.Write("Hello Go Wasm 11")
 }
